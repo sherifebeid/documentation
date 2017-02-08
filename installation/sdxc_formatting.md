@@ -15,3 +15,17 @@ The standard formatting tools built into Windows are limited, as they only allow
 Run the [SD Formatter](https://www.sdcard.org/downloads/formatter_4/) tool first with "FORMAT SIZE ADJUSTMENT" set to "ON", to ensure that any other partitions on the SD card are deleted. Then run the FAT32 Format (guiformat.exe) tool, ensure you choose the correct drive letter, leave the other options at their default settings, and click "Start". After it has finished, you can proceed with the rest of the [NOOBS instructions](noobs.md).
 
 If the FAT32 Format tool doesn't work for you, alternative options are [MiniTool Partition Wizard Free Edition](http://www.minitool.com/partition-manager/partition-wizard-home.html) and [EaseUS Partition Master Free](http://www.easeus.com/partition-manager/epm-free.html) which are "home user" versions of fully featured partition editor tools, and so not as straightforward to use.
+
+Another way to format it under windows without using any extra software
+First, make sure your SD Card is plugged in
+Search and open Command Prompt as an administrator
+Next, you’ll have to open the disk management utility using CMD (Command Prompt) – to do that, type in diskpart and hit enter
+After that, you will have to display the connected disks that are available – to do that, type in list disk and hit enter
+Then, you’ll need to select your SD Card – to do that, type select disk # and hit enter – you’ll have to replace the # with your disk number
+Next, you’ll have to clean the SD Card – to do that, type clean and hit enter
+Then you’ll need to create a bootable partition – type in create partition primary and hit enter
+You will now need to select the partition that you just created. To do that, type in select partition 1 
+After that, type active and hit enter
+Next, you’ll need to format the USB drive – just type in format fs=fat32 quick and hit enter
+You’ll now need to assign your USB drive a letter, to do that, just type in assign
+Thats all.
